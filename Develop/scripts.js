@@ -1,14 +1,11 @@
-const StartDate = $('#currentDay').text(moment().format('dddd, MMMM YYYY'));
-const currentTime = $('#currentTime').text(moment().format("LT"));
-
-
-const now = moment().hours();
 
 $(document).ready(function () {
     $('.saveBtn').on('click', function() {
         var usrText = $(this).siblings('.description').val();
-        var hour = $(this).parent().attr('id');
-        localStorage.setItem(hour, usrText);
+        var time = $(this).parent().attr('id');
+        localStorage.setItem(time, usrText);
+
+        
     });
 
     $('#Iam9 .description').val(localStorage.getItem('Iam9'));
@@ -21,6 +18,5 @@ $(document).ready(function () {
     $('#Iam4 .description').val(localStorage.getItem('Iam4'));
     $('#Iam5 .description').val(localStorage.getItem('Iam5'));
 
-
-
+    
     });
